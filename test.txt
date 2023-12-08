@@ -1,10 +1,10 @@
 test base 3
-
-ZZ99ZZ
-ZZ99Z
-ZZ99
-ZZ9
-ZZ
+Q W E R T I
+Z Z 9 9 Z Z
+Z Z 9 9 Z
+Z Z 9 9
+Z Z 9
+Z Z
 Z
 
 000
