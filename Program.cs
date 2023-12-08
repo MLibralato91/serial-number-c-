@@ -13,11 +13,11 @@ namespace NewProject
 
     static string SerialNumber(string serial)
     {
-      int q = 0;
-      int w = 36;
-      int e = 0;
-      int r = 0;
-      int t = 0;
+      int q = 30;
+      int w = 35;
+      int e = 9;
+      int r = 9;
+      int t = 35;
       int i = 1;
       string result = "";
       string x = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -25,54 +25,81 @@ namespace NewProject
 
       int lengthX = x.Length - 1;
       int lengthY = y.Length - 1;
-      
+
       if (q >= lengthX && w >= lengthX && e >= lengthY && r >= lengthY && t >= lengthX && i >= lengthX)
       {
         Console.WriteLine("Non hai più numeri seriali disponibili");
       }
-      else if(q >= lengthX && w >= lengthX && e >= lengthY && r >= lengthY && t >= lengthX)
+      else if (q >= lengthX && w >= lengthX && e >= lengthY && r >= lengthY && t >= lengthX)
       {
-        q= 0;
-        w= 0;
+        q = 0;
+        w = 0;
         e = 0;
         r = 0;
         t = 0;
         i++;
-        result = x[q].ToString() + x[w].ToString() + y[e].ToString() + y[r].ToString() + x[t].ToString() + x[i].ToString();
 
-      }else if(q >= lengthX && w >= lengthX && e >= lengthY && r >= lengthY)
+      }
+      else if (q >= lengthX && w >= lengthX && e >= lengthY && r >= lengthY)
       {
-        q= 0;
-        w= 0;
+        q = 0;
+        w = 0;
         e = 0;
         r = 0;
         t++;
-        result = x[q].ToString() + x[w].ToString() + y[e].ToString() + y[r].ToString() + x[t].ToString() + x[i].ToString();
 
-      }else if(q >= lengthX && w >= lengthX && e >= lengthY)
+      }
+      else if (q >= lengthX && w >= lengthX && e >= lengthY)
       {
-        q= 0;
-        w= 0;
+        q = 0;
+        w = 0;
         e = 0;
         r++;
-        result = x[q].ToString() + x[w].ToString() + y[e].ToString() + y[r].ToString() + x[t].ToString() + x[i].ToString();
 
-      }else if(q >= lengthX && w >= lengthX)
+      }
+      else if (q >= lengthX && w >= lengthX)
       {
-        q= 0;
-        w= 0;
+        q = 0;
+        w = 0;
         e++;
-        result = x[q].ToString() + x[w].ToString() + y[e].ToString() + y[r].ToString() + x[t].ToString() + x[i].ToString();
 
-      }else if(q >= lengthX)
+      }
+      else if (q >= lengthX)
       {
         q = 0;
         w++;
-        result = x[q].ToString() + x[w].ToString() + y[e].ToString() + y[r].ToString() + x[t].ToString() + x[i].ToString();
-      }else {
-        q++;
-        result = x[q].ToString() + x[w].ToString() + y[e].ToString() + y[r].ToString() + x[t].ToString() + x[i].ToString();
+        if (w >= lengthX)
+        {
+          w = 0;
+          e++;
+          if (e >= lengthY)
+          {
+            e = 0;
+            r++;
+            if (r >= lengthY)
+            {
+              r = 0;
+              t++;
+              if (t >= lengthX)
+              {
+                t = 0;
+                i++;
+                if (i >= lengthX)
+                {
+                  Console.WriteLine("Non hai più numeri seriali disponibili");
+
+                }
+              }
+            }
+          }
+        }
+
       }
+      else
+      {
+        q++;
+      }
+      result = x[q].ToString() + x[w].ToString() + y[e].ToString() + y[r].ToString() + x[t].ToString() + x[i].ToString();
 
       return result;
 
